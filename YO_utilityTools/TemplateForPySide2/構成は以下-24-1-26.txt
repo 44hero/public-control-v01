@@ -1,0 +1,76 @@
+-構成は以下-
+0): QMainWindow
+|
+|-- 1): QWidget (central_wid) -Widget-
+  |
+  |-- 2): QVBoxLayout (main_vbxLay) -Layout-
+    |
+    |-- 3): 大フレーム群 と 底面ボタン群 とに分けられます
+      |
+      |-- 大フレーム群 <フレーム に commonInformation と displayOptions がぶら下がります> -Widget-
+      |   3.1): QFrame (self.frame_frWid) -Widget-
+      |   |
+      |   |-- <self.commonInformation() -まとまり->
+      |   |   QVBoxLayout (self.frame_vbxLay) -Layout-
+      |   |   |
+      |   |   |-- QLabel (txt1_lblWid) -Widget-
+      |   |   |-- QLabel (txt2_lblWid) -Widget-
+      |   |   |-- QFrame (separator_frWid) -Widget-
+      |   |
+      |   |-- <self.displayOptions() -まとまり->
+      |       QVBoxLayout (self.frame_vbxLay) -Layout-
+      |       |
+      |       |-- QWidget (container1_wid) -Widget-
+      |       |   |
+      |       |   |-- QHBoxLayout (container1_hbxLay) -Layout-
+      |       |       |
+      |       |       |-- QLabel ("New Widget") -Widget-
+      |       |
+      |       |-- QWidget (container2_wid) -Widget-
+      |           |
+      |           |-- QVBoxLayout (container2_vbxLay) -Layout-
+      |               |
+      |               |-- QLabel (another_lblWid "Another Widget") -Widget-
+      |
+      |-- 底面ボタン群 <self.commonButtons() -まとまり-> -Layout-
+          3.2): QHBoxLayout (self.button_hbxLay) -Layout-
+          |
+          |-- QPushButton ("Execute") -Widget-
+          |-- QPushButton ("Reset") -Widget-
+          |-- QPushButton ("Close") -Widget-
+          
+-概要-
+0): QMainWindow (メインウィンドウ)
+- メインウィンドウ全体を管理するクラスです.
+
+1): QWidget (central_wid) -Widget-
+- メインウィンドウの中央に配置されるウィジェットです.
+- 垂直に配置されたレイアウト (QVBoxLayout: main_vbxLay) を持っています.
+
+2): QVBoxLayout (main_vbxLay) -Layout-
+- QWidget (central_wid) 内のメインレイアウトです.
+
+   3): 大フレーム群 と 底面ボタン群
+      - `QWidget` 内のコンテンツをさらに2つに分けています.
+
+      3.1): 大フレーム群 -Widget-
+         - `QFrame` (`self.frame_frWid`) を使用して、共通情報 (`commonInformation`) と表示オプション (`displayOptions`) を含む2つのグループに分けています.
+         - それぞれのグループは `QVBoxLayout` (`self.frame_vbxLay`) を持っています.
+
+            - commonInformation (共通情報)
+               - `QVBoxLayout` (`self.frame_vbxLay`) を持ち、その中に以下のウィジェットが配置されています:
+                  - `QLabel` (`txt1_lblWid`)
+                  - `QLabel` (`txt2_lblWid`)
+                  - `QFrame` (`separator_frWid`)
+
+            - displayOptions (表示オプション)
+               - `QVBoxLayout` (`self.frame_vbxLay`) を持ち、その中に以下の2つのコンテナが配置されています:
+                  - `QWidget` (`container1_wid`) は `QHBoxLayout` (`container1_hbxLay`) を持ち、その中に `QLabel` ("New Widget") が配置されています.
+                  - `QWidget` (`container2_wid`) は `QVBoxLayout` (`container2_vbxLay`) を持ち、その中に `QLabel` (`another_lblWid`, "Another Widget") が配置されています.
+
+      3.2): 底面ボタン群 -Layout-
+         - `QHBoxLayout` (`self.button_hbxLay`) を使用して、以下の3つのボタンを水平に配置しています:
+            - `QPushButton` ("Execute") -Widget-
+            - `QPushButton` ("Reset") -Widget-
+            - `QPushButton` ("Close") -Widget-
+         - これらのボタンは `self.commonButtons()` メソッド内で構築されます.
