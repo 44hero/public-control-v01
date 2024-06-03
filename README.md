@@ -3,12 +3,6 @@
 
 [![Image from Gyazo](https://i.gyazo.com/6dd08a2a72f688396a271e114776a939.gif)](https://gyazo.com/6dd08a2a72f688396a271e114776a939)
 
-C:\Users\oki44\work\PycharmProjects\selfMade_05\YO_utilityTools>tree /f
-
-フォルダー パスの一覧:  ボリューム BOOTCAMP
-
-ボリューム シリアル番号は CC6C-CFE9 です
-
 ```fetch
 C:.
 │  index.txt
