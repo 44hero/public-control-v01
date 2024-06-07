@@ -3,7 +3,7 @@
 
 [![Image from Gyazo](https://i.gyazo.com/6dd08a2a72f688396a271e114776a939.gif)](https://gyazo.com/6dd08a2a72f688396a271e114776a939)
 
-[![Image from Gyazo](https://i.gyazo.com/6dd08a2a72f688396a271e114776a939.gif)](https://www.canva.com/design/DAGHacc-Big/A-RSMvG-oDRKf8kKZt4Y7A/watch)
+[![Image from Gyazo](https://i.gyazo.com/cba60f48e70933880344539e1b6a3cc3.gif)](https://gyazo.com/cba60f48e70933880344539e1b6a3cc3)
 
 ```fetch
 C:.
