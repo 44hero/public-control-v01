@@ -1,9 +1,9 @@
 # public-control-v01
 特定権限者のみへの 公開の権限 をコントロールしています -v01-
 
-[![Image from Gyazo](https://i.gyazo.com/6dd08a2a72f688396a271e114776a939.gif)](https://gyazo.com/6dd08a2a72f688396a271e114776a939)
-
-[![Image from Gyazo](https://i.gyazo.com/cba60f48e70933880344539e1b6a3cc3.gif)](https://gyazo.com/cba60f48e70933880344539e1b6a3cc3)
+YO
+RigGenericToolGroup -5.5- <py 3.7.7, ui:PySide2 5.15.2>
+[![Image from Gyazo](https://i.gyazo.com/502e1e424c095df998691422e23dca5f.gif)](https://gyazo.com/502e1e424c095df998691422e23dca5f)
 
 ```fetch
 C:.
