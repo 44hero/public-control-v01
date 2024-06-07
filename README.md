@@ -5,6 +5,8 @@ YO
 RigGenericToolGroup -5.5- <py 3.7.7, ui:PySide2 5.15.2>
 [![Image from Gyazo](https://i.gyazo.com/502e1e424c095df998691422e23dca5f.gif)](https://gyazo.com/502e1e424c095df998691422e23dca5f)
 
+https://i.gyazo.com/502e1e424c095df998691422e23dca5f.mp4
+
 ```fetch
 C:.
 │  index.txt
