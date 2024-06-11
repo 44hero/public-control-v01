@@ -6,8 +6,91 @@ yoRigGenericToolGroup -5.5- <py 3.7.7, ui:PySide2 5.15.2>
 [yoRigGenericToolGroup 動作動画](https://i.gyazo.com/9c1172e56e9fc4eca9ea4036239624ec.mp4)
 
 <details>
-  <summary>HTMLって何の略？</summary>
-  <p>「Hyper Text Markup Language」の略です。</p>
+  <summary>yoRigGenericToolGroup -5.5- <py 3.7.7, ui:PySide2 5.15.2></summary>
+  
+note: 当コード記述時の環境
+
+    - Maya2022 python3系
+    - Python version: 3.7.7
+    - PyMel version: 1.2.0
+    - PySide2 version: 5.15.2
+
+zipダウンロードし解凍ののち、YO_utilityToolsフォルダ 毎、
+ユーザー側での、所定のMaya のスクリプト パス直下に、コピーのうえ、
+例えば、maya script editor python タブ で、以下をタイピングのうえ、実行してください。
+
+```python
+from imp import reload
+import YO_utilityTools.rigGenericToolGroup.yoRigGenericToolGroup_main
+reload(YO_utilityTools.rigGenericToolGroup.yoRigGenericToolGroup_main)
+from YO_utilityTools.rigGenericToolGroup import yoRigGenericToolGroup_main
+yoRigGenericToolGroup_main.main()
+```
+
+### ●開発の経緯・ストーリー
+ユーザーの Mayaスクリプトパスへの、自前パッケージごとのコピーで、自前パッケージを、エラー無く提供ができる仕組みを確立してみたかったのです。
+
+こだわったところは、
+
+1. MVC設計を意識した ツール開発
+1. 最終目標である、PySide2 UI仕様 でのツール開発
+1. クラス継承と名前空間の理解
+1. シングルトンの理解
+
+です。
+
+### ●使用した技術
+
+- フロント・クライアント技術
+
+
+- サーバーサイド技術
+
+    Python 3系, PySide2, PyMel, Maya command
+
+- DB・ミドルウェア技術
+
+
+- インフラ/その他専門技術
+
+
+### ●使用した技術の選定理由
+きっかけは、
+(株)ポリゴンピクチュアズ における、高度な技術を目の当たりにしてからです。
+自身が一人だちするに当たり、自身の不足箇所が非常に明らかになりました。
+そこで、自身のスキルアップに価値を見出しました。
+自身をスキルをアップしない事には、ただでさえ作業に多くの時間を費やすリグ作業において、自身が疲弊するだけであると。
+
+大別して、
+
+■ Maya上で動作する、リグのスキルアップ
+
+■ そのリグ作業を支援するツール開発をするにあたり、pythonプログラムを用いたツール開発のスキルアップ
+
+以上を大命題にすえます。
+
+
+■活かせる経験・知識・技術
+2024/5/25 現在
+最新の、スキルを以下に詳らかに致します。
+
+■■■ pythonプログラミング Maya用ツール開発 のスキル ■■■
+- python パッケージ と モジュール のノウハウ
+- 名前空間 について
+- シングルトン モジュール について
+- MVCモデル を意識した システム開発設計方針 について
+- クラス継承 について
+- Maya上で動作する様々なUI の理解 について(現在 Maya2022 Python3系)
+    - Maya command UI
+    - Maya PyMel UI
+    - Maya PySide2 UI
+- UI 入力データ の管理方法 について
+
+■■■ Maya上で動作するリグ のスキルアップ ■■■
+- アニメータに優しい軽量な リグ動作 の考察と実現 のノウハウ
+- 標準コンストレインを用いずMatrixノードを多用したリグの実現 のノウハウ
+- 作業分担 の実現 のノウハウ
+
 </details>
 
 <details>
