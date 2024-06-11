@@ -10,6 +10,8 @@ yoRigGenericToolGroup -5.5- <py 3.7.7, ui:PySide2 5.15.2>
   <p>「Hyper Text Markup Language」の略です。</p>
 </details>
 
+<details>
+  <summary>tree</summary>
 ```shell
 C:.
 │  yoCustomScriptEditor2StandAlone.py
@@ -150,3 +152,6 @@ C:.
 
         
 ```
+</details>
+
+
