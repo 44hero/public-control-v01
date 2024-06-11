@@ -3,7 +3,17 @@
 
 yoRigGenericToolGroup -5.5- <py 3.7.7, ui:PySide2 5.15.2>
 
-[![Image from Gyazo](https://i.gyazo.com/9c1172e56e9fc4eca9ea4036239624ec.gif)](https://gyazo.com/9c1172e56e9fc4eca9ea4036239624ec)
+<a href="https://gyazo.com/9c1172e56e9fc4eca9ea4036239624ec">
+  <video width="1120"
+    autoplay
+    muted
+    loop
+    playsinline
+    controls>
+    <source src="https://i.gyazo.com/9c1172e56e9fc4eca9ea4036239624ec.mp4"
+      type="video/mp4"/>
+  </video>
+</a>
 
 ```shell
 C:.
