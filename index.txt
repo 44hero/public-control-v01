@@ -1,139 +1,136 @@
-C:\Users\oki44\work\PycharmProjects\selfMade_05\YO_utilityTools> tree /f
-ƒtƒHƒ‹ƒ_[ ƒpƒX‚Ìˆê——:  ƒ{ƒŠƒ…[ƒ€ BOOTCAMP
-ƒ{ƒŠƒ…[ƒ€ ƒVƒŠƒAƒ‹”Ô†‚Í CC6C-CFE9 ‚Å‚·
 C:.
-„   yoCustomScriptEditor2StandAlone.py
-„   yoIsHistoricallyInteresting.py
-„   YO_constraintToGeometry2.py
-„   YO_jointDrawStyle_change.py
-„   YO_jointRadiusSlider.py
-„   YO_nodeCreateToWorldSpace.py
-„   YO_parentConstraintByMatrix5.py
-„   YO_parentConstraintByMatrix62.py
-„   __init__.py
-„ 
-„¥„ŸcreateClusterAndRenameTool
-„       config.py
-„       YO_createClusterAndRename6_Ctlr.py
-„       YO_createClusterAndRename6_main.py
-„       YO_createClusterAndRename6_Modl.py
-„       YO_createClusterAndRename6_View.py
-„       __init__.py
-„ 
-„¥„ŸcreateSpaceNode
-„       config.py
-„       YO_createSpaceNode3_Ctlr.py
-„       YO_createSpaceNode3_main.py
-„       YO_createSpaceNode3_Modl.py
-„       YO_createSpaceNode3_View.py
-„       __init__.py
-„ 
-„¥„ŸcreateSpIkAndRenameTool
-„       config.py
-„       YO_createSpIkAndRename3_Ctlr.py
-„       YO_createSpIkAndRename3_main.py
-„       YO_createSpIkAndRename3_Modl.py
-„       YO_createSpIkAndRename3_View.py
-„       __init__.py
-„ 
-„¥„Ÿlib
-„       commonCheckCurve.py
-„       commonCheckJoint.py
-„       commonCheckMesh.py
-„       commonCheckSelection.py
-„       commonCheckShape.py
-„       commonCheckSkinCluster.py
-„       commonCheckSurface.py
-„       commonInverseScaleConnection_AtoB_2.py
-„       message.py
-„       message_warning.py
-„       yoGetAttributeFromModule.py
-„       YO_logger2.py
-„       YO_optionVar.py
-„       YO_printLoadedModules.py
-„       YO_uuID.py
-„       YO_validate.py
-„       __init__.py
-„ 
-„¥„ŸorientConstraintByMatrix
-„       config.py
-„       YO_orientConstraintByMatrix1_Ctlr.py
-„       YO_orientConstraintByMatrix1_main.py
-„       YO_orientConstraintByMatrix1_Modl.py
-„       YO_orientConstraintByMatrix1_View.py
-„       __init__.py
-„ 
-„¥„ŸpointConstraintByMatrix
-„       config.py
-„       YO_pointConstraintByMatrix1_Ctlr.py
-„       YO_pointConstraintByMatrix1_main.py
-„       YO_pointConstraintByMatrix1_Modl.py
-„       YO_pointConstraintByMatrix1_View.py
-„       __init__.py
-„ 
-„¥„ŸrenameTool
-„       config.py
-„       YO_renameTool5_Ctlr.py
-„       YO_renameTool5_main.py
-„       YO_renameTool5_Modl.py
-„       YO_renameTool5_View.py
-„       __init__.py
-„ 
-„¥„ŸrigGenericToolGroup
-„   „   config.py
-„   „   yoRigGenericToolGroup_Ctlr.py
-„   „   yoRigGenericToolGroup_main.py
-„   „   yoRigGenericToolGroup_Modl.py
-„   „   yoRigGenericToolGroup_View.py
-„   „   __init__.py
-„ 
-„¥„ŸscaleConstraintByMatrix
-„       config.py
-„       YO_scaleConstraintByMatrix1_Ctlr.py
-„       YO_scaleConstraintByMatrix1_main.py
-„       YO_scaleConstraintByMatrix1_Modl.py
-„       YO_scaleConstraintByMatrix1_View.py
-„       __init__.py
-„ 
-„¥„ŸshearConstraintByMatrix
-„       config.py
-„       YO_shearConstraintByMatrix1_Ctlr.py
-„       YO_shearConstraintByMatrix1_main.py
-„       YO_shearConstraintByMatrix1_Modl.py
-„       YO_shearConstraintByMatrix1_View.py
-„       __init__.py
-„ 
-„¥„ŸskinWeightsExpImpTool
-„   „   config.py
-„   „   yoSkinWeightsExpImpTool_Ctlr.py
-„   „   yoSkinWeightsExpImpTool_main.py
-„   „   yoSkinWeightsExpImpTool_Modl.py
-„   „   yoSkinWeightsExpImpTool_View.py
-„   „   __init__.py
-„   „ 
-„ 
-„¥„ŸTemplateForPySide2
-„   „   Container.py
-„   „   CustomScriptEditor.py
-„   „   CustomScriptEditor2.py
-„   „   CustomScriptEditor2SPIModule.py
-„   „   MyTabWidget.py
-„   „   pyside2IniFileSetting.py
-„   „   qt.py
-„   „   __init__.py
-„   „ 
-„   „¥„Ÿtype1
-„   „       config.py
-„   „       templateForPySide2_type1_Ctlr.py
-„   „       templateForPySide2_type1_main.py
-„   „       templateForPySide2_type1_Modl.py
-„   „       templateForPySide2_type1_View.py
-„   „       __init__.py
-„   „ 
-„   „¤„Ÿtype2
-„           config.py
-„           templateForPySide2_type2_Ctlr.py
-„           templateForPySide2_type2_main.py
-„           templateForPySide2_type2_Modl.py
-„           templateForPySide2_type2_View.py
-„           __init__.py
+â”‚  yoCustomScriptEditor2StandAlone.py
+â”‚  yoIsHistoricallyInteresting.py
+â”‚  YO_constraintToGeometry2.py
+â”‚  YO_jointDrawStyle_change.py
+â”‚  YO_jointRadiusSlider.py
+â”‚  YO_nodeCreateToWorldSpace.py
+â”‚  YO_parentConstraintByMatrix5.py
+â”‚  YO_parentConstraintByMatrix62.py
+â”‚  __init__.py
+â”‚
+â”œâ”€createClusterAndRenameTool
+â”‚      config.py
+â”‚      YO_createClusterAndRename6_Ctlr.py
+â”‚      YO_createClusterAndRename6_main.py
+â”‚      YO_createClusterAndRename6_Modl.py
+â”‚      YO_createClusterAndRename6_View.py
+â”‚      __init__.py
+â”‚
+â”œâ”€createSpaceNode
+â”‚      config.py
+â”‚      YO_createSpaceNode3_Ctlr.py
+â”‚      YO_createSpaceNode3_main.py
+â”‚      YO_createSpaceNode3_Modl.py
+â”‚      YO_createSpaceNode3_View.py
+â”‚      __init__.py
+â”‚
+â”œâ”€createSpIkAndRenameTool
+â”‚      config.py
+â”‚      YO_createSpIkAndRename3_Ctlr.py
+â”‚      YO_createSpIkAndRename3_main.py
+â”‚      YO_createSpIkAndRename3_Modl.py
+â”‚      YO_createSpIkAndRename3_View.py
+â”‚      __init__.py
+â”‚
+â”œâ”€lib
+â”‚      commonCheckCurve.py
+â”‚      commonCheckJoint.py
+â”‚      commonCheckMesh.py
+â”‚      commonCheckSelection.py
+â”‚      commonCheckShape.py
+â”‚      commonCheckSkinCluster.py
+â”‚      commonCheckSurface.py
+â”‚      commonInverseScaleConnection_AtoB_2.py
+â”‚      message.py
+â”‚      message_warning.py
+â”‚      yoGetAttributeFromModule.py
+â”‚      YO_logger2.py
+â”‚      YO_optionVar.py
+â”‚      YO_printLoadedModules.py
+â”‚      YO_uuID.py
+â”‚      YO_validate.py
+â”‚      __init__.py
+â”‚
+â”œâ”€orientConstraintByMatrix
+â”‚      config.py
+â”‚      YO_orientConstraintByMatrix1_Ctlr.py
+â”‚      YO_orientConstraintByMatrix1_main.py
+â”‚      YO_orientConstraintByMatrix1_Modl.py
+â”‚      YO_orientConstraintByMatrix1_View.py
+â”‚      __init__.py
+â”‚
+â”œâ”€pointConstraintByMatrix
+â”‚      config.py
+â”‚      YO_pointConstraintByMatrix1_Ctlr.py
+â”‚      YO_pointConstraintByMatrix1_main.py
+â”‚      YO_pointConstraintByMatrix1_Modl.py
+â”‚      YO_pointConstraintByMatrix1_View.py
+â”‚      __init__.py
+â”‚
+â”œâ”€renameTool
+â”‚      config.py
+â”‚      YO_renameTool5_Ctlr.py
+â”‚      YO_renameTool5_main.py
+â”‚      YO_renameTool5_Modl.py
+â”‚      YO_renameTool5_View.py
+â”‚      __init__.py
+â”‚
+â”œâ”€rigGenericToolGroup
+â”‚  â”‚  config.py
+â”‚  â”‚  yoRigGenericToolGroup_Ctlr.py
+â”‚  â”‚  yoRigGenericToolGroup_main.py
+â”‚  â”‚  yoRigGenericToolGroup_Modl.py
+â”‚  â”‚  yoRigGenericToolGroup_View.py
+â”‚  â”‚  __init__.py
+â”‚
+â”œâ”€scaleConstraintByMatrix
+â”‚      config.py
+â”‚      YO_scaleConstraintByMatrix1_Ctlr.py
+â”‚      YO_scaleConstraintByMatrix1_main.py
+â”‚      YO_scaleConstraintByMatrix1_Modl.py
+â”‚      YO_scaleConstraintByMatrix1_View.py
+â”‚      __init__.py
+â”‚
+â”œâ”€shearConstraintByMatrix
+â”‚      config.py
+â”‚      YO_shearConstraintByMatrix1_Ctlr.py
+â”‚      YO_shearConstraintByMatrix1_main.py
+â”‚      YO_shearConstraintByMatrix1_Modl.py
+â”‚      YO_shearConstraintByMatrix1_View.py
+â”‚      __init__.py
+â”‚
+â”œâ”€skinWeightsExpImpTool
+â”‚  â”‚  config.py
+â”‚  â”‚  yoSkinWeightsExpImpTool_Ctlr.py
+â”‚  â”‚  yoSkinWeightsExpImpTool_main.py
+â”‚  â”‚  yoSkinWeightsExpImpTool_Modl.py
+â”‚  â”‚  yoSkinWeightsExpImpTool_View.py
+â”‚  â”‚  __init__.py
+â”‚  â”‚
+â”‚
+â”œâ”€TemplateForPySide2
+â”‚  â”‚  Container.py
+â”‚  â”‚  CustomScriptEditor.py
+â”‚  â”‚  CustomScriptEditor2.py
+â”‚  â”‚  CustomScriptEditor2SPIModule.py
+â”‚  â”‚  MyTabWidget.py
+â”‚  â”‚  pyside2IniFileSetting.py
+â”‚  â”‚  qt.py
+â”‚  â”‚  __init__.py
+â”‚  â”‚
+â”‚  â”œâ”€type1
+â”‚  â”‚      config.py
+â”‚  â”‚      templateForPySide2_type1_Ctlr.py
+â”‚  â”‚      templateForPySide2_type1_main.py
+â”‚  â”‚      templateForPySide2_type1_Modl.py
+â”‚  â”‚      templateForPySide2_type1_View.py
+â”‚  â”‚      __init__.py
+â”‚  â”‚
+â”‚  â””â”€type2
+â”‚          config.py
+â”‚          templateForPySide2_type2_Ctlr.py
+â”‚          templateForPySide2_type2_main.py
+â”‚          templateForPySide2_type2_Modl.py
+â”‚          templateForPySide2_type2_View.py
+â”‚          __init__.py
