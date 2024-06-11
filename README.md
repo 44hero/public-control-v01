@@ -5,6 +5,11 @@ yoRigGenericToolGroup -5.5- <py 3.7.7, ui:PySide2 5.15.2>
 
 [yoRigGenericToolGroup 動作動画](https://i.gyazo.com/9c1172e56e9fc4eca9ea4036239624ec.mp4)
 
+<details>
+  <summary>HTMLって何の略？</summary>
+  <p>「Hyper Text Markup Language」の略です。</p>
+</details>
+
 ```shell
 C:.
 │  yoCustomScriptEditor2StandAlone.py
