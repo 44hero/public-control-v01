@@ -7,8 +7,9 @@ yoRigGenericToolGroup -5.5- <py 3.7.7, ui:PySide2 5.15.2>
 
 ```shell
 C:.
-│  index.txt
-│  mirrorGeometry.py
+│  yoCustomScriptEditor2StandAlone.py
+│  yoIsHistoricallyInteresting.py
+│  YO_constraintToGeometry2.py
 │  YO_jointDrawStyle_change.py
 │  YO_jointRadiusSlider.py
 │  YO_nodeCreateToWorldSpace.py
@@ -45,6 +46,9 @@ C:.
 │      commonCheckJoint.py
 │      commonCheckMesh.py
 │      commonCheckSelection.py
+│      commonCheckShape.py
+│      commonCheckSkinCluster.py
+│      commonCheckSurface.py
 │      commonInverseScaleConnection_AtoB_2.py
 │      message.py
 │      message_warning.py
@@ -72,18 +76,6 @@ C:.
 │      YO_pointConstraintByMatrix1_View.py
 │      __init__.py
 │
-├─PySide2_sample
-│      config.py
-│      PySide2_sample_Ctlr.py
-│      PySide2_sample_main.py
-│      PySide2_sample_Modl.py
-│      PySide2_sample_View.py
-│      PySide2_sample_View_1_start.py
-│      PySide2_sample_View_2_before2FromFinal.py
-│      PySide2_sample_View_3_before1FromFinal.py
-│      PySide2_sample_View_4_final.py
-│      __init__.py
-│
 ├─renameTool
 │      config.py
 │      YO_renameTool5_Ctlr.py
@@ -93,12 +85,12 @@ C:.
 │      __init__.py
 │
 ├─rigGenericToolGroup
-│      config.py
-│      yoRigGenericToolGroup_Ctlr.py
-│      yoRigGenericToolGroup_main.py
-│      yoRigGenericToolGroup_Modl.py
-│      yoRigGenericToolGroup_View.py
-│      __init__.py
+│  │  config.py
+│  │  yoRigGenericToolGroup_Ctlr.py
+│  │  yoRigGenericToolGroup_main.py
+│  │  yoRigGenericToolGroup_Modl.py
+│  │  yoRigGenericToolGroup_View.py
+│  │  __init__.py
 │
 ├─scaleConstraintByMatrix
 │      config.py
@@ -116,18 +108,24 @@ C:.
 │      YO_shearConstraintByMatrix1_View.py
 │      __init__.py
 │
+├─skinWeightsExpImpTool
+│  │  config.py
+│  │  yoSkinWeightsExpImpTool_Ctlr.py
+│  │  yoSkinWeightsExpImpTool_main.py
+│  │  yoSkinWeightsExpImpTool_Modl.py
+│  │  yoSkinWeightsExpImpTool_View.py
+│  │  __init__.py
+│  │
+│
 ├─TemplateForPySide2
 │  │  Container.py
+│  │  CustomScriptEditor.py
+│  │  CustomScriptEditor2.py
+│  │  CustomScriptEditor2SPIModule.py
 │  │  MyTabWidget.py
 │  │  pyside2IniFileSetting.py
 │  │  qt.py
-│  │  qt_old.py
 │  │  __init__.py
-│  │  構成は以下-24-1-26.md
-│  │  構成は以下-24-1-26.txt
-│  │
-│  ├─sample
-│  │      Container_orijinal.py
 │  │
 │  ├─type1
 │  │      config.py
@@ -144,11 +142,6 @@ C:.
 │          templateForPySide2_type2_Modl.py
 │          templateForPySide2_type2_View.py
 │          __init__.py
-│
-└─testPackage
-        myWidget.py
-        myWidget2.py
-        myWidget_MVC1File.py
-        __init__.py
+
         
 ```
