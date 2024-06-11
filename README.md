@@ -1,22 +1,15 @@
 # public-control-v01
 特定権限者のみへの 公開の権限 をコントロールしています -v01-
 
-YO
-RigGenericToolGroup -5.5- <py 3.7.7, ui:PySide2 5.15.2>
+yoRigGenericToolGroup -5.5- <py 3.7.7, ui:PySide2 5.15.2>
 
 <a href="https://gyazo.com/9c1172e56e9fc4eca9ea4036239624ec">
-  <video width="1120"
-    autoplay
-    muted
-    loop
-    playsinline
-    controls>
-    <source src="https://i.gyazo.com/9c1172e56e9fc4eca9ea4036239624ec.mp4"
-      type="video/mp4"/>
-  </video>
+  <img src="https://i.gyazo.com/9c1172e56e9fc4eca9ea4036239624ec.gif"
+    alt="Image from Gyazo"
+    width="1120"/>
 </a>
 
-```fetch
+```shell
 C:.
 │  index.txt
 │  mirrorGeometry.py
