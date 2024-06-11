@@ -1,7 +1,9 @@
 # public-control-v01
 特定権限者のみへの 公開の権限 をコントロールしています -v01-
 
-yoRigGenericToolGroup -5.5- <py 3.7.7, ui:PySide2 5.15.2>
+## 実行サンプル
+
+例えば、yoRigGenericToolGroup -5.5- <py 3.7.7, ui:PySide2 5.15.2> についてです。
 
 [yoRigGenericToolGroup 動作動画](https://i.gyazo.com/9c1172e56e9fc4eca9ea4036239624ec.mp4)
 
