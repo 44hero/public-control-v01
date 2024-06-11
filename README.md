@@ -3,7 +3,7 @@
 
 yoRigGenericToolGroup -5.5- <py 3.7.7, ui:PySide2 5.15.2>
 
-https://i.gyazo.com/9c1172e56e9fc4eca9ea4036239624ec.mp4
+[test](https://i.gyazo.com/9c1172e56e9fc4eca9ea4036239624ec.mp4){target=_blank}
 
 ```shell
 C:.
