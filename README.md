@@ -3,7 +3,7 @@
 
 yoRigGenericToolGroup -5.5- <py 3.7.7, ui:PySide2 5.15.2>
 
-[!'Youtube動画のURL'](https://i.gyazo.com/9c1172e56e9fc4eca9ea4036239624ec.mp4){target=_blank}
+<a href="[https://example.com](https://i.gyazo.com/9c1172e56e9fc4eca9ea4036239624ec.mp4)" target="_blank">リンク</a>
 
 
 ```shell
