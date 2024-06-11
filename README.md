@@ -96,7 +96,7 @@ yoRigGenericToolGroup_main.main()
 </details>
 
 <details>
-  <summary>tree</summary>
+  <summary>tree 構成</summary>
   
 ```shell
 C:.
