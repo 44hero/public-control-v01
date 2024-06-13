@@ -263,7 +263,12 @@ C:.
 <img src="https://i.gyazo.com/333ccb7464acd594adc178e01511c909.gif" width="300">
 
 ### pointConstraintByMatrix
+<img src="https://i.gyazo.com/ee6c769db445800e3dda60e22bb50675.gif" width="300">
+	
 ### orientConstraintByMatrix
+<img src="https://i.gyazo.com/0a83fd4ec712fcfd98ebdbbc102f9445.gif" width="300">
+
+
 ### scaleConstraintByMatrix
 ### shearConstraintByMatrix
 ### skinWeightsExpImpTool
