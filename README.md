@@ -9,8 +9,8 @@
 
 [yoRigGenericToolGroup 動作動画](https://i.gyazo.com/f4388b4c8347cf0e996e3043e3963875.mp4)
 
+<img src="https://i.gyazo.com/f4388b4c8347cf0e996e3043e3963875.gif">
 <img src="https://i.gyazo.com/f4388b4c8347cf0e996e3043e3963875.gif" width="700">
-
 <details>
   <summary>例えば、yoRigGenericToolGroup -5.5- <py 3.7.7, ui:PySide2 5.15.2> についてです。</summary>
   
