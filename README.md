@@ -295,15 +295,11 @@ C:.
 	
 <img src="https://i.gyazo.com/d181ab4fa69c292535f3397f0acaab89.gif" width="300">
 <br>	
-<br>
-<br>
 	
 [skinWeightsExpImpTool export動作動画02](https://i.gyazo.com/ed1165cfde788df7c66fb045201cf83a.mp4)
 	
 <img src="https://i.gyazo.com/ed1165cfde788df7c66fb045201cf83a.gif" width="300">
 <br>	
-<br>
-<br>
 	
 [skinWeightsExpImpTool import動作動画](https://i.gyazo.com/0bdaa15541a45a63b58b4e6c6cad3417.mp4)
 	
