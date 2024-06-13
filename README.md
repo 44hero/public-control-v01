@@ -260,7 +260,7 @@ C:.
 <img src="https://i.gyazo.com/3ac7d147787720c4f9bfdf8ad899d3db.gif" width="300">
 
 ### createSpIkAndRenameTool
-<img src="https://i.gyazo.com/3ac7d147787720c4f9bfdf8ad899d3db.gif" width="300">	
+<img src="https://i.gyazo.com/333ccb7464acd594adc178e01511c909.gif" width="300">
 
 ### pointConstraintByMatrix
 ### orientConstraintByMatrix
