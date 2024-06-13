@@ -286,4 +286,8 @@ C:.
 <img src="https://i.gyazo.com/5fcf0d637c5e162eb60373ab54a33344.gif" width="300">
 	
 ### ・shearConstraintByMatrix
+[shearConstraintByMatrix 動作動画](https://i.gyazo.com/48d77acfceb3c0589feae0198cb9fe4c.mp4)
+	
+<img src="https://i.gyazo.com/48d77acfceb3c0589feae0198cb9fe4c.gif" width="300">
+	
 ### ・skinWeightsExpImpTool
