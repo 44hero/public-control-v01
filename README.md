@@ -248,7 +248,7 @@ C:.
 
 ----
 	
-## ●各ツール紹介 (一部)
+## ●他 主な各ツール 紹介 (一部)
 	
 ### renameTool
 <img src="https://i.gyazo.com/9c1172e56e9fc4eca9ea4036239624ec.gif" width="300">
