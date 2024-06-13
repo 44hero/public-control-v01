@@ -250,27 +250,40 @@ C:.
 	
 ## ●他 主な各ツール 紹介 (一部)
 	
-### renameTool
+### ・renameTool
+[renameTool 動作動画](https://i.gyazo.com/44711214ea10767b77da427c05a3e1b8.mp4)
+
 <img src="https://i.gyazo.com/44711214ea10767b77da427c05a3e1b8.gif" width="300">
 	
-### createSpaceNode
+### ・createSpaceNode
+[createSpaceNode 動作動画](https://i.gyazo.com/d998a35999407e9b84c2277db0b3aed2.mp4)
+	
 <img src="https://i.gyazo.com/d998a35999407e9b84c2277db0b3aed2.gif" width="300">
 
-### createClusterAndRenameTool
+### ・createClusterAndRenameTool
+[createClusterAndRenameTool 動作動画](https://i.gyazo.com/3ac7d147787720c4f9bfdf8ad899d3db.mp4)
+	
 <img src="https://i.gyazo.com/3ac7d147787720c4f9bfdf8ad899d3db.gif" width="300">
 
-### createSpIkAndRenameTool
+### ・createSpIkAndRenameTool
+[createClusterAndRenameTool 動作動画](https://i.gyazo.com/333ccb7464acd594adc178e01511c909.mp4)
+	
 <img src="https://i.gyazo.com/333ccb7464acd594adc178e01511c909.gif" width="300">
 
-### pointConstraintByMatrix
+### ・pointConstraintByMatrix
+[pointConstraintByMatrix 動作動画](https://i.gyazo.com/ee6c769db445800e3dda60e22bb50675.mp4)
+	
 <img src="https://i.gyazo.com/ee6c769db445800e3dda60e22bb50675.gif" width="300">
 	
-### orientConstraintByMatrix
+### ・orientConstraintByMatrix
+[pointConstraintByMatrix 動作動画](https://i.gyazo.com/0a83fd4ec712fcfd98ebdbbc102f9445.mp4)
+	
 <img src="https://i.gyazo.com/0a83fd4ec712fcfd98ebdbbc102f9445.gif" width="300">
 
-
-### scaleConstraintByMatrix
-### shearConstraintByMatrix
-### skinWeightsExpImpTool
-### pointConstraintByMatrix
-### orientConstraintByMatrix	
+### ・scaleConstraintByMatrix
+[scaleConstraintByMatrix 動作動画](https://i.gyazo.com/5fcf0d637c5e162eb60373ab54a33344.mp4)
+	
+<img src="https://i.gyazo.com/5fcf0d637c5e162eb60373ab54a33344.gif" width="300">
+	
+### ・shearConstraintByMatrix
+### ・skinWeightsExpImpTool
