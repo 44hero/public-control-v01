@@ -248,7 +248,7 @@ C:.
 
 ----
 	
-## ●他 主な各ツール 紹介 (一部)
+## ●他 主な個別ツール 紹介 (一部)
 	
 ### ・renameTool
 [renameTool 動作動画](https://i.gyazo.com/44711214ea10767b77da427c05a3e1b8.mp4)
