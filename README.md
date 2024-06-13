@@ -2,7 +2,7 @@
 特定権限者のみへの 公開の権限 をコントロールしています -v01-
 
 ----
-
+# ■YO_utilityTools package
 ## ●実行サンプル
 
 例えば、yoRigGenericToolGroup -5.5- <py 3.7.7, ui:PySide2 5.15.2> についてです。
