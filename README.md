@@ -251,11 +251,17 @@ C:.
 ## ●他 主な各ツール 紹介 (一部)
 	
 ### renameTool
-<img src="https://i.gyazo.com/9c1172e56e9fc4eca9ea4036239624ec.gif" width="300">
+<img src="https://i.gyazo.com/44711214ea10767b77da427c05a3e1b8.gif" width="300">
 	
 ### createSpaceNode
+<img src="https://i.gyazo.com/d998a35999407e9b84c2277db0b3aed2.gif" width="300">
+
 ### createClusterAndRenameTool
+<img src="https://i.gyazo.com/3ac7d147787720c4f9bfdf8ad899d3db.gif" width="300">
+
 ### createSpIkAndRenameTool
+<img src="https://i.gyazo.com/3ac7d147787720c4f9bfdf8ad899d3db.gif" width="300">	
+
 ### pointConstraintByMatrix
 ### orientConstraintByMatrix
 ### scaleConstraintByMatrix
