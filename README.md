@@ -7,13 +7,7 @@
 
 [yoRigGenericToolGroup 動作動画](https://i.gyazo.com/9c1172e56e9fc4eca9ea4036239624ec.mp4)
 
-[![Image from Gyazo](https://i.gyazo.com/9c1172e56e9fc4eca9ea4036239624ec.gif)](https://gyazo.com/9c1172e56e9fc4eca9ea4036239624ec)
-
-<img src="[***画像URL***](https://i.gyazo.com/9c1172e56e9fc4eca9ea4036239624ec.gif)" width="200">
-
-<div><video controls src="<![---動画のURL---](https://i.gyazo.com/9c1172e56e9fc4eca9ea4036239624ec.gif)>" muted="false"></video></div>
-
-<img src="https://i.gyazo.com/9c1172e56e9fc4eca9ea4036239624ec.gif" width="300">
+<img src="https://i.gyazo.com/9c1172e56e9fc4eca9ea4036239624ec.gif" width="500">
 
 <details>
   <summary>例えば、yoRigGenericToolGroup -5.5- <py 3.7.7, ui:PySide2 5.15.2> についてです。</summary>
