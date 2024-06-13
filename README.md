@@ -1,13 +1,15 @@
-# public-control-v01
+# ■public-control-v01
 特定権限者のみへの 公開の権限 をコントロールしています -v01-
 
-## 実行サンプル
+----
+
+## ●実行サンプル
 
 例えば、yoRigGenericToolGroup -5.5- <py 3.7.7, ui:PySide2 5.15.2> についてです。
 
-[yoRigGenericToolGroup 動作動画](https://i.gyazo.com/9c1172e56e9fc4eca9ea4036239624ec.mp4)
+[yoRigGenericToolGroup 動作動画](https://i.gyazo.com/f4388b4c8347cf0e996e3043e3963875.mp4)
 
-<img src="https://i.gyazo.com/9c1172e56e9fc4eca9ea4036239624ec.gif" width="700">
+<img src="https://i.gyazo.com/f4388b4c8347cf0e996e3043e3963875.gif" width="700">
 
 <details>
   <summary>例えば、yoRigGenericToolGroup -5.5- <py 3.7.7, ui:PySide2 5.15.2> についてです。</summary>
@@ -242,4 +244,20 @@ C:.
 ```
 </details>
 
-
+----
+	
+## ●各ツール紹介 (一部)
+	
+### renameTool
+<img src="https://i.gyazo.com/9c1172e56e9fc4eca9ea4036239624ec.gif" width="300">
+	
+### createSpaceNode
+### createClusterAndRenameTool
+### createSpIkAndRenameTool
+### pointConstraintByMatrix
+### orientConstraintByMatrix
+### scaleConstraintByMatrix
+### shearConstraintByMatrix
+### skinWeightsExpImpTool
+### pointConstraintByMatrix
+### orientConstraintByMatrix	
