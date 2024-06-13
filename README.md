@@ -11,6 +11,8 @@
 
 <img src="[***画像URL***](https://i.gyazo.com/9c1172e56e9fc4eca9ea4036239624ec.gif)" width="200">
 
+<div><video controls src="<![---動画のURL---](https://i.gyazo.com/9c1172e56e9fc4eca9ea4036239624ec.gif)>" muted="false"></video></div>
+
 <details>
   <summary>例えば、yoRigGenericToolGroup -5.5- <py 3.7.7, ui:PySide2 5.15.2> についてです。</summary>
   
