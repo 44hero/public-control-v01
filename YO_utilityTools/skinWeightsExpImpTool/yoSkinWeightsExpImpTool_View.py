@@ -1,13 +1,12 @@
 # -*- coding: utf-8 -*-
-
 u"""
 yoSkinWeightsExpImpTool_View.py
 
 :Author:
     oki yoshihiro
     okiyoshihiro.job@gmail.com
-:Version: -2.0-
-:Date: 2024/05/09
+:Version: -3.1-
+:Date: 2024/06/07
 
 .. note:: 当コード記述時の環境
 
@@ -16,6 +15,134 @@ yoSkinWeightsExpImpTool_View.py
     - PySide2 version: 5.15.2
 
 -リマインダ-
+    done: 2024/06/07
+        - 追加3
+            - 概要: カスタムの Script Editor2 への プロセス文字列 出力 を加味
+            - 詳細:
+                ::
+
+                    +   def exp_browse_path(self):
+                            # 追加3 ############################## start
+                            set_string = 'set'
+                            self.scriptEditor2.append_default(set_string)
+                            # 追加3 ############################## end
+                            ...
+
+                    +   def imp_open_file(self):
+                            # 追加3 ############################## start
+                            open_string = 'open'
+                            self.scriptEditor2.append_default(open_string)
+                            # 追加3 ############################## end
+                            ...
+            version = '-3.1-'
+
+    done: 2024/06/07
+        - 変更2 と 追加2 と 新規2
+            - 概要: カスタムの の Script Editor へのログ出力 を、
+                カスタムの Script Editor2 (PySide2作成UI) で置き換え
+            - 詳細: カスタムの Script Editor2 (PySide2作成UI) で置き換える為には、
+                from ..TemplateForPySide2.CustomScriptEditor2SPIModule import custom_scriptEditor2_instance
+                モジュールを必要とします
+                また、
+                    他のモジュール でも シングルトンモジュール として再利用している関係で
+                        エラーの影響が及びます
+                そのエラーの影響を回避する目的として、
+                    以下のように、あらかじめ カスタムの Script Editor2 モジュール
+                        を定義しています
+                ::
+
+                    +   # 追加2
+                        from ..TemplateForPySide2.CustomScriptEditor2SPIModule import custom_scriptEditor2_instance
+
+                    +   def __init__(self, _model):
+                            ...
+                            # 変更2 ########################################################### start
+                            # # カスタムで、専用の スクリプトエディタ を初期化
+                            # self.script_editor = None
+                            # self.statusCurrent_scriptEditor = 'open'
+                            self.scriptEditor2_chunk1()
+                            self.scriptEditor2_chunk2()
+                            # 変更2 ########################################################### end
+                            ...
+
+                    +   # 新規2 ########################################################### start
+                        def scriptEditor2_chunk1(self):
+                            ...
+
+                        def scriptEditor2_chunk2(self):
+                            ...
+
+                        def create_scriptEditor2_and_show(self):
+                            ...
+
+                        @Slot()
+                        def on_scriptEditor2_closed(self):
+                            ...
+                        # 新規2 ########################################################### end
+
+                    +   def closeEvent(self, event):
+                            ...
+                            if self.statusCurrent_scriptEditor2 == 'closed':
+                                pass
+                            else:
+                                # 修正2
+                                # message("Script editor also completely closed and exited at the same time.")
+                                # # self.scriptEditor2.close()
+                                # スクリプトエディタ は 完全に閉じず 隠れます
+                                self.scriptEditor2.close()
+
+                                # 修正2
+                                # スクリプトエディタを完全に閉じる
+                                # CustomScriptEditorのインスタンスはQtのイベントループが次に実行されるときに遅延削除されます。
+                                # これにより、CustomScriptEditorのウィジェットが閉じられ、
+                                # その後のコードがそのウィジェットを参照しないことを保証できる。
+                                # CustomScriptEditorのインスタンスは完全に削除されるため、
+                                # その状態（例えばQTextEditの内容）は保持されない。
+                                # その状態を保持するためには、何らかの形でその状態を保存し、
+                                # 新しいCustomScriptEditorのインスタンスが作成されるときにその状態を復元する必要がある
+                                # self.scriptEditor2.deleteLater()
+                            ...
+
+                    +   # UIの起動 関数
+                        def createUI(self):
+                            ...
+                            # 最終的にUIを作成
+                            self.show()   # 継承元の show メソッド 組み込み関数 を再利用 しています
+                            ...
+                            # 修正2 #################### start
+                            # # 追加と変更と新規1
+                            # print('新規に outPut 専用 script_editor ウィジェット も作成します')
+                            # self.create_script_editor_and_show()
+                            # print(self.script_editor)
+                            # 修正2 #################### end
+                            ...
+
+                    +   # 修正2 ######################################################## start
+                        # # 追加と変更と新規1
+                        # def create_script_editor_and_show(self):
+                        #     ...
+                        # 修正2 ######################################################## end
+
+                    +   # 修正2 ######################################################## start
+                        # # CustomScriptEditor クラスの closedシグナル が発行されると 当メソッド が呼び出されます
+                        # @Slot()
+                        # def on_script_editor_closed(self):
+                        #     ...
+                        # 修正2 ######################################################## end
+
+                    あらゆる箇所で、利用されている、以下を修正(  # 修正2)
+                    -   self.statusCurrent_scriptEditor... 箇所を
+                    +   self.statusCurrent_scriptEditor2... と修正
+
+                    あらゆる箇所で、利用されている、以下を修正(  # 修正2)
+                    -   self.script_editor... 箇所を
+                    +   self.scriptEditor2... と修正
+
+                    あらゆる箇所で、利用されている、以下を修正(  # 修正2)
+                    -   self.create_script_editor_and_show() 箇所を
+                    +   self.create_scriptEditor2_and_show() と修正
+            version = '-3.0-'
+
     done: 2024/05/08~2024/05/09
         追加と変更と新規1
             - 概要: outPut 専用 script_editor ウィジェット の挙動修正
@@ -55,6 +182,7 @@ yoSkinWeightsExpImpTool_View.py
         新規
         version = '-1.0-'
 """
+
 
 # 標準ライブラリ #################################################################
 import os
@@ -102,6 +230,8 @@ from ..lib.commonCheckSurface import commonCheckSurface
 from ..lib.commonCheckShape import commonCheckShape
 from ..lib.commonCheckSkinCluster import commonCheckSkinCluster
 # 汎用ライブラリー の使用 #################################################### end
+# 追加2
+from ..TemplateForPySide2.CustomScriptEditor2SPIModule import custom_scriptEditor2_instance
 
 
 class CustomPopup(QDialog):
@@ -244,9 +374,53 @@ class SkinWeightExpImp_View(Tpl4PySide2_Type1_View):
         # コンストラクタのまとまり6_色 設定
         self.constructorChunk6_color()
 
+        # 変更2 ########################################################### start
+        # # カスタムで、専用の スクリプトエディタ を初期化
+        # self.script_editor = None
+        # self.statusCurrent_scriptEditor = 'open'
+        self.scriptEditor2_chunk1()
+        self.scriptEditor2_chunk2()
+        # 変更2 ########################################################### end
+
+    # 新規2 ########################################################### start
+    # ここで、CustomScriptEditor2 の closedシグナル を購読しています
+    def scriptEditor2_chunk1(self):
+        # note): custom_scriptEditor2_instance 本モジュール基で、
+        #   CustomScriptEditor2(title, infoDetail)
+        #   引数: title, 引数: infoDetail
+        #   を定義しています
+        self.scriptEditor2 = custom_scriptEditor2_instance
+
+        # ここで、CustomScriptEditor2 の closedシグナル を購読しています
+        self.scriptEditor2.closed.connect(self.on_scriptEditor2_closed)
         # カスタムで、専用の スクリプトエディタ を初期化
-        self.script_editor = None
-        self.statusCurrent_scriptEditor = 'open'
+        # self.scriptEditor2 = None
+        self.statusCurrent_scriptEditor2 = 'open'
+
+    def scriptEditor2_chunk2(self):
+        # print('--------- ' + f'{self.__class__}' + ' ---------')
+        # print('outPut 専用 scriptEditor2 ウィジェット を 紐づき で作成します')
+        self.create_scriptEditor2_and_show()
+        # print(self.scriptEditor2)
+        # print('--------- ' + f'{self.__class__}' + ' ---------' * 3 + 'end\n')
+
+    def create_scriptEditor2_and_show(self):
+        # CustomScriptEditor2 ﾓｼﾞｭｰﾙ先では、あえて、show() せず、ここで show() しています。
+        self.scriptEditor2.show()  # note): これは必須です。
+        self.statusCurrent_scriptEditor2 = 'open'
+
+    # CustomScriptEditor2 クラスの closedシグナル が発行されると 当メソッド が呼び出されます
+    @Slot()
+    def on_scriptEditor2_closed(self):
+        # commonMessage = "Script editor was hided. Not closed !!"
+        # message_warning(commonMessage + f'{self.__class__}')
+
+        self.statusCurrent_scriptEditor2 = 'closed'
+        # # QTextEdit の内容を保存
+        # self.script_editor_content = self.scriptEditor2.text_edit.toPlainText()
+        # print(self.script_editor_content)
+        return self.statusCurrent_scriptEditor2
+    # 新規2 ########################################################### end
 
     # コンストラクタのまとまり1_.iniファイル 設定
     def constructorChunk1_iniFileSetting(self):
@@ -627,34 +801,38 @@ class SkinWeightExpImp_View(Tpl4PySide2_Type1_View):
         # 最終的にUIを作成
         self.show()   # 継承元の show メソッド 組み込み関数 を再利用 しています
 
-        # 追加と変更と新規1
-        print('新規に outPut 専用 script_editor ウィジェット も作成します')
-        self.create_script_editor_and_show()
-        print(self.script_editor)
+        # 修正2 #################### start
+        # # 追加と変更と新規1
+        # print('新規に outPut 専用 script_editor ウィジェット も作成します')
+        # self.create_script_editor_and_show()
+        # print(self.script_editor)
+        # 修正2 #################### end
 
-    # 追加と変更と新規1
-    def create_script_editor_and_show(self):
-        # カスタムで、専用の スクリプトエディタ を作成します
-        if self.script_editor is None:
-            self.script_editor = CustomScriptEditor(
-                title = 'resultOutputUI_forHeadsUpSpecialization',
-                infoDetail = ('<注意喚起特化用_結果_出力_UI>\n\n'
-                              '各ｺｰﾄﾞ実行中に頻繁に出力される結果表示において、\n'
-                              '注意喚起の結果出力だけにフォーカスした、\n'
-                              '注意喚起特化用UI\n'
-                              'です。\n\n'
-                              'note): \n'
-                              '右ボタン押下でエディタ用途として\n簡単な編集も可能です。')
-                )  # 都度各ｺｰﾄﾞ実行内容の結果出力 用 UI です
-            self.script_editor.closed.connect(self.on_script_editor_closed)
-        else:
-            print('ひき続き継続して使用中...')
-            pass
-
-        # CustomScriptEditor ﾓｼﾞｭｰﾙ先では、あえて、show() せず、ここで show() しています。
-        self.script_editor.show()  # note): これは必須です。
-
-        self.statusCurrent_scriptEditor = 'open'
+    # 修正2 ######################################################## start
+    # # 追加と変更と新規1
+    # def create_script_editor_and_show(self):
+    #     # カスタムで、専用の スクリプトエディタ を作成します
+    #     if self.script_editor is None:
+    #         self.script_editor = CustomScriptEditor(
+    #             title = 'resultOutputUI_forHeadsUpSpecialization',
+    #             infoDetail = ('<注意喚起特化用_結果_出力_UI>\n\n'
+    #                           '各ｺｰﾄﾞ実行中に頻繁に出力される結果表示において、\n'
+    #                           '注意喚起の結果出力だけにフォーカスした、\n'
+    #                           '注意喚起特化用UI\n'
+    #                           'です。\n\n'
+    #                           'note): \n'
+    #                           '右ボタン押下でエディタ用途として\n簡単な編集も可能です。')
+    #             )  # 都度各ｺｰﾄﾞ実行内容の結果出力 用 UI です
+    #         self.script_editor.closed.connect(self.on_script_editor_closed)
+    #     else:
+    #         print('ひき続き継続して使用中...')
+    #         pass
+    #
+    #     # CustomScriptEditor ﾓｼﾞｭｰﾙ先では、あえて、show() せず、ここで show() しています。
+    #     self.script_editor.show()  # note): これは必須です。
+    #
+    #     self.statusCurrent_scriptEditor2 = 'open'
+    # 修正2 ######################################################## end
 
     # reset ボタン及びメニュー を選択したかどうかを文字列で返す 関数
     def doResetStatYesOrNo_byString(self, value: bool) -> str:
@@ -1167,15 +1345,15 @@ class SkinWeightExpImp_View(Tpl4PySide2_Type1_View):
     # export 関連 ######################################################### start
     def getSkinClusterBtn_directCheck(self, message_, caseIndex_):
         check_string = 'check'
-        message(check_string)
+        # message(check_string)
 
         # 追加と変更と新規1
-        # print(self.statusCurrent_scriptEditor)
-        if self.statusCurrent_scriptEditor == 'closed':
-            self.create_script_editor_and_show()
-            # print(self.statusCurrent_scriptEditor)
+        # print(self.statusCurrent_scriptEditor2)
+        if self.statusCurrent_scriptEditor2 == 'closed':
+            self.create_scriptEditor2_and_show()  # 修正2
+            # print(self.statusCurrent_scriptEditor2)
 
-        self.script_editor.append_default(check_string)
+        self.scriptEditor2.append_default(check_string)  # 修正2
 
         sels = commonCheckSelection()
         if not sels:
@@ -1185,15 +1363,15 @@ class SkinWeightExpImp_View(Tpl4PySide2_Type1_View):
                                                 )
             self.exp_skinnedGeoTypeLabel_upDate('', callWarning = 'warning')
             meaasge_warning_string = 'get SkinCluster name was not successful !!'
-            message_warning(meaasge_warning_string)
+            # message_warning(meaasge_warning_string)
 
             # 追加と変更と新規1
-            # print(self.statusCurrent_scriptEditor)
-            if self.statusCurrent_scriptEditor == 'closed':
-                self.create_script_editor_and_show()
-                # print(self.statusCurrent_scriptEditor)
+            # print(self.statusCurrent_scriptEditor2)
+            if self.statusCurrent_scriptEditor2 == 'closed':
+                self.create_scriptEditor2_and_show()  # 修正2
+                # print(self.statusCurrent_scriptEditor2)
 
-            self.script_editor.append_warning(meaasge_warning_string)
+            self.scriptEditor2.append_warning(meaasge_warning_string)  # 修正2
             self.exp_fileNameTxtFld_upDate('')  # name_SC = ''
         else:
             hasShapeList = [commonCheckShape(sel) for sel in sels]
@@ -1257,15 +1435,15 @@ class SkinWeightExpImp_View(Tpl4PySide2_Type1_View):
 
     def exp_fileNameTxtFld_upDate(self, name_SC):
         upDate_string = 'upDate'
-        message(upDate_string)
+        # message(upDate_string)
 
         # 追加と変更と新規1
-        # print(self.statusCurrent_scriptEditor)
-        if self.statusCurrent_scriptEditor == 'closed':
-            self.create_script_editor_and_show()
-            # print(self.statusCurrent_scriptEditor)
+        # print(self.statusCurrent_scriptEditor2)
+        if self.statusCurrent_scriptEditor2 == 'closed':
+            self.create_scriptEditor2_and_show()  # 修正2
+            # print(self.statusCurrent_scriptEditor2)
 
-        self.script_editor.append_default(upDate_string)
+        self.scriptEditor2.append_default(upDate_string)  # 修正2
 
         # print(f'-{name_SC}-')
         self.expFileNameTxtFld_lEdtWid.setText(name_SC)
@@ -1274,12 +1452,12 @@ class SkinWeightExpImp_View(Tpl4PySide2_Type1_View):
             message_warning(meaasge_warning_string)
 
             # 追加と変更と新規1
-            # print(self.statusCurrent_scriptEditor)
-            if self.statusCurrent_scriptEditor == 'closed':
-                self.create_script_editor_and_show()
-                # print(self.statusCurrent_scriptEditor)
+            # print(self.statusCurrent_scriptEditor2)
+            if self.statusCurrent_scriptEditor2 == 'closed':
+                self.create_scriptEditor2_and_show()  # 修正2
+                # print(self.statusCurrent_scriptEditor2)
 
-            self.script_editor.append_warning(meaasge_warning_string)
+            self.scriptEditor2.append_warning(meaasge_warning_string)  # 修正2
             # self.expFileNameTxtFld_lEdtWid
             # 設定を施す ###################################
             # 編集可能コントロール
@@ -1292,18 +1470,23 @@ class SkinWeightExpImp_View(Tpl4PySide2_Type1_View):
             self.expFileNameTxtFld_lEdtWid.setReadOnly(True)
 
     def exp_browse_path(self):
+        # 追加3 ############################## start
+        set_string = 'set'
+        self.scriptEditor2.append_default(set_string)
+        # 追加3 ############################## end
+
         directory = QFileDialog.getExistingDirectory(self, "Select Directory")
         if not directory:
             meaasge_warning_string = 'set directory was not successful !!'
             message_warning(meaasge_warning_string)
 
             # 追加と変更と新規1
-            # print(self.statusCurrent_scriptEditor)
-            if self.statusCurrent_scriptEditor == 'closed':
-                self.create_script_editor_and_show()
-                # print(self.statusCurrent_scriptEditor)
+            # print(self.statusCurrent_scriptEditor2)
+            if self.statusCurrent_scriptEditor2 == 'closed':
+                self.create_scriptEditor2_and_show()  # 修正2
+                # print(self.statusCurrent_scriptEditor2)
 
-            self.script_editor.append_warning(meaasge_warning_string)
+            self.scriptEditor2.append_warning(meaasge_warning_string)  # 修正2
         else:
             self.expFilePathTxtFld_lEdtWid.setText(directory)
             self.exp_directory = directory
@@ -1320,15 +1503,15 @@ class SkinWeightExpImp_View(Tpl4PySide2_Type1_View):
 
     def exp_exeButton_skinClusterWeightFile_outPut(self, message_, caseIndex_):
         outPut_string = 'outPut'
-        message(outPut_string)
+        # message(outPut_string)
 
         # 追加と変更と新規1
-        # print(self.statusCurrent_scriptEditor)
-        if self.statusCurrent_scriptEditor == 'closed':
-            self.create_script_editor_and_show()
-            # print(self.statusCurrent_scriptEditor)
+        # print(self.statusCurrent_scriptEditor2)
+        if self.statusCurrent_scriptEditor2 == 'closed':
+            self.create_scriptEditor2_and_show()  # 修正2
+            # print(self.statusCurrent_scriptEditor2)
 
-        self.script_editor.append_default(outPut_string)
+        self.scriptEditor2.append_default(outPut_string)  # 修正2
 
         # print(f'message_: {message_}')
         # print(f'caseIndex_: {caseIndex_}')
@@ -1347,12 +1530,12 @@ class SkinWeightExpImp_View(Tpl4PySide2_Type1_View):
             message_warning(meaasge_warning_string)
 
             # 追加と変更と新規1
-            # print(self.statusCurrent_scriptEditor)
-            if self.statusCurrent_scriptEditor == 'closed':
-                self.create_script_editor_and_show()
-                # print(self.statusCurrent_scriptEditor)
+            # print(self.statusCurrent_scriptEditor2)
+            if self.statusCurrent_scriptEditor2 == 'closed':
+                self.create_scriptEditor2_and_show()  # 修正2
+                # print(self.statusCurrent_scriptEditor2)
 
-            self.script_editor.append_warning(meaasge_warning_string)
+            self.scriptEditor2.append_warning(meaasge_warning_string)  # 修正2
         else:
             if len(sels) >= 2:
                 pass
@@ -1361,12 +1544,12 @@ class SkinWeightExpImp_View(Tpl4PySide2_Type1_View):
                 message_warning(meaasge_warning_string)
 
                 # 追加と変更と新規1
-                # print(self.statusCurrent_scriptEditor)
-                if self.statusCurrent_scriptEditor == 'closed':
-                    self.create_script_editor_and_show()
-                    # print(self.statusCurrent_scriptEditor)
+                # print(self.statusCurrent_scriptEditor2)
+                if self.statusCurrent_scriptEditor2 == 'closed':
+                    self.create_scriptEditor2_and_show()  # 修正2
+                    # print(self.statusCurrent_scriptEditor2)
 
-                self.script_editor.append_warning(meaasge_warning_string)
+                self.scriptEditor2.append_warning(meaasge_warning_string)  # 修正2
             else:
                 commonMessage_fileName = (u'File name が設定されていません。'
                                           u'上部の \'get SkinCluster name\' ボタンを押下し、'
@@ -1384,46 +1567,46 @@ class SkinWeightExpImp_View(Tpl4PySide2_Type1_View):
                     message_warning(meaasge_warning_string)
 
                     # 追加と変更と新規1
-                    # print(self.statusCurrent_scriptEditor)
-                    if self.statusCurrent_scriptEditor == 'closed':
-                        self.create_script_editor_and_show()
-                        # print(self.statusCurrent_scriptEditor)
+                    # print(self.statusCurrent_scriptEditor2)
+                    if self.statusCurrent_scriptEditor2 == 'closed':
+                        self.create_scriptEditor2_and_show()  # 修正2
+                        # print(self.statusCurrent_scriptEditor2)
 
-                    self.script_editor.append_warning(meaasge_warning_string)
+                    self.scriptEditor2.append_warning(meaasge_warning_string)  # 修正2
                     meaasge_warning_string = commonMessage_filePath
                     message_warning(meaasge_warning_string)
 
                     # 追加と変更と新規1
-                    # print(self.statusCurrent_scriptEditor)
-                    if self.statusCurrent_scriptEditor == 'closed':
-                        self.create_script_editor_and_show()
-                        # print(self.statusCurrent_scriptEditor)
+                    # print(self.statusCurrent_scriptEditor2)
+                    if self.statusCurrent_scriptEditor2 == 'closed':
+                        self.create_scriptEditor2_and_show()  # 修正2
+                        # print(self.statusCurrent_scriptEditor2)
 
-                    self.script_editor.append_warning(meaasge_warning_string)
+                    self.scriptEditor2.append_warning(meaasge_warning_string)  # 修正2
                 # ox
                 elif self.exp_SCname and self.exp_directory == r'':
                     meaasge_warning_string = commonMessage_filePath
                     message_warning(meaasge_warning_string)
 
                     # 追加と変更と新規1
-                    # print(self.statusCurrent_scriptEditor)
-                    if self.statusCurrent_scriptEditor == 'closed':
-                        self.create_script_editor_and_show()
-                        # print(self.statusCurrent_scriptEditor)
+                    # print(self.statusCurrent_scriptEditor2)
+                    if self.statusCurrent_scriptEditor2 == 'closed':
+                        self.create_scriptEditor2_and_show()  # 修正2
+                        # print(self.statusCurrent_scriptEditor2)
 
-                    self.script_editor.append_warning(meaasge_warning_string)
+                    self.scriptEditor2.append_warning(meaasge_warning_string)  # 修正2
                 # xo
                 elif self.exp_SCname == '' and self.exp_directory:
                     meaasge_warning_string = commonMessage_fileName
                     message_warning(meaasge_warning_string)
 
                     # 追加と変更と新規1
-                    # print(self.statusCurrent_scriptEditor)
-                    if self.statusCurrent_scriptEditor == 'closed':
-                        self.create_script_editor_and_show()
-                        # print(self.statusCurrent_scriptEditor)
+                    # print(self.statusCurrent_scriptEditor2)
+                    if self.statusCurrent_scriptEditor2 == 'closed':
+                        self.create_scriptEditor2_and_show()  # 修正2
+                        # print(self.statusCurrent_scriptEditor2)
 
-                    self.script_editor.append_warning(meaasge_warning_string)
+                    self.scriptEditor2.append_warning(meaasge_warning_string)  # 修正2
                 # oo
                 elif self.exp_SCname and self.exp_directory:
                     # print('ok')
@@ -1463,12 +1646,12 @@ class SkinWeightExpImp_View(Tpl4PySide2_Type1_View):
             message_warning(meaasge_warning_string)
 
             # 追加と変更と新規1
-            # print(self.statusCurrent_scriptEditor)
-            if self.statusCurrent_scriptEditor == 'closed':
-                self.create_script_editor_and_show()
-                # print(self.statusCurrent_scriptEditor)
+            # print(self.statusCurrent_scriptEditor2)
+            if self.statusCurrent_scriptEditor2 == 'closed':
+                self.create_scriptEditor2_and_show()  # 修正2
+                # print(self.statusCurrent_scriptEditor2)
 
-            self.script_editor.append_warning(meaasge_warning_string)
+            self.scriptEditor2.append_warning(meaasge_warning_string)  # 修正2
             # ウィンドウが閉じられた場合の処理
             isContinue_bool: bool = False
         else:
@@ -1480,6 +1663,11 @@ class SkinWeightExpImp_View(Tpl4PySide2_Type1_View):
 
     # import 関連 ######################################################### start
     def imp_open_file(self):
+        # 追加3 ############################## start
+        open_string = 'open'
+        self.scriptEditor2.append_default(open_string)
+        # 追加3 ############################## end
+
         file_dialog = QFileDialog()
         file_path, _ = file_dialog.getOpenFileName(self,
                                                    "Open XML File", "",
@@ -1490,12 +1678,12 @@ class SkinWeightExpImp_View(Tpl4PySide2_Type1_View):
             message_warning(meaasge_warning_string)
 
             # 追加と変更と新規1
-            # print(self.statusCurrent_scriptEditor)
-            if self.statusCurrent_scriptEditor == 'closed':
-                self.create_script_editor_and_show()
-                # print(self.statusCurrent_scriptEditor)
+            # print(self.statusCurrent_scriptEditor2)
+            if self.statusCurrent_scriptEditor2 == 'closed':
+                self.create_scriptEditor2_and_show()  # 修正2
+                # print(self.statusCurrent_scriptEditor2)
 
-            self.script_editor.append_warning(meaasge_warning_string)
+            self.scriptEditor2.append_warning(meaasge_warning_string)  # 修正2
         else:
             # ファイルパスをディレクトリとファイル名に分割
             directory, file_name = os.path.split(file_path)
@@ -1517,15 +1705,15 @@ class SkinWeightExpImp_View(Tpl4PySide2_Type1_View):
 
     def imp_exeButton_skinClusterWeightFile_inPut(self, message_, caseIndex_):
         inPut_string = 'inPut'
-        message(inPut_string)
+        # message(inPut_string)
 
         # 追加と変更と新規1
-        # print(self.statusCurrent_scriptEditor)
-        if self.statusCurrent_scriptEditor == 'closed':
-            self.create_script_editor_and_show()
-            # print(self.statusCurrent_scriptEditor)
+        # print(self.statusCurrent_scriptEditor2)
+        if self.statusCurrent_scriptEditor2 == 'closed':
+            self.create_scriptEditor2_and_show()  # 修正2
+            # print(self.statusCurrent_scriptEditor2)
 
-        self.script_editor.append_default(inPut_string)
+        self.scriptEditor2.append_default(inPut_string)  # 修正2
 
         # print(f'message_: {message_}')
         # print(f'caseIndex_: {caseIndex_}')
@@ -1546,12 +1734,12 @@ class SkinWeightExpImp_View(Tpl4PySide2_Type1_View):
             message_warning(meaasge_warning_string)
 
             # 追加と変更と新規1
-            # print(self.statusCurrent_scriptEditor)
-            if self.statusCurrent_scriptEditor == 'closed':
-                self.create_script_editor_and_show()
-                # print(self.statusCurrent_scriptEditor)
+            # print(self.statusCurrent_scriptEditor2)
+            if self.statusCurrent_scriptEditor2 == 'closed':
+                self.create_scriptEditor2_and_show()  # 修正2
+                # print(self.statusCurrent_scriptEditor2)
 
-            self.script_editor.append_warning(meaasge_warning_string)
+            self.scriptEditor2.append_warning(meaasge_warning_string)  # 修正2
         else:
             if len(sels) >= 2:
                 pass
@@ -1561,12 +1749,12 @@ class SkinWeightExpImp_View(Tpl4PySide2_Type1_View):
                 message_warning(meaasge_warning_string)
 
                 # 追加と変更と新規1
-                # print(self.statusCurrent_scriptEditor)
-                if self.statusCurrent_scriptEditor == 'closed':
-                    self.create_script_editor_and_show()
-                    # print(self.statusCurrent_scriptEditor)
+                # print(self.statusCurrent_scriptEditor2)
+                if self.statusCurrent_scriptEditor2 == 'closed':
+                    self.create_scriptEditor2_and_show()  # 修正2
+                    # print(self.statusCurrent_scriptEditor2)
 
-                self.script_editor.append_warning(meaasge_warning_string)
+                self.scriptEditor2.append_warning(meaasge_warning_string)  # 修正2
             else:
                 commonMessage = (u'File name, File path が設定されていません。'
                                  u'上部の \'Open File\' ボタンを押下し、'
@@ -1578,12 +1766,12 @@ class SkinWeightExpImp_View(Tpl4PySide2_Type1_View):
                     message_warning(meaasge_warning_string)
 
                     # 追加と変更と新規1
-                    # print(self.statusCurrent_scriptEditor)
-                    if self.statusCurrent_scriptEditor == 'closed':
-                        self.create_script_editor_and_show()
-                        # print(self.statusCurrent_scriptEditor)
+                    # print(self.statusCurrent_scriptEditor2)
+                    if self.statusCurrent_scriptEditor2 == 'closed':
+                        self.create_scriptEditor2_and_show()  # 修正2
+                        # print(self.statusCurrent_scriptEditor2)
 
-                    self.script_editor.append_warning(meaasge_warning_string)
+                    self.scriptEditor2.append_warning(meaasge_warning_string)
                 elif self.imp_directory and self.imp_FileName:
                     self.controller.executeBtn_import(message_, caseIndex_,
                                                       self.imp_directory,
@@ -1595,15 +1783,17 @@ class SkinWeightExpImp_View(Tpl4PySide2_Type1_View):
     # def show(self):
     #     pass
 
-    # CustomScriptEditor クラスの closedシグナル が発行されると 当メソッド が呼び出されます
-    @Slot()
-    def on_script_editor_closed(self):
-        message_warning("Script editor was hided. Not closed !!")
-        self.statusCurrent_scriptEditor = 'closed'
-        # # QTextEdit の内容を保存
-        # self.script_editor_content = self.script_editor.text_edit.toPlainText()
-        # print(self.script_editor_content)
-        return self.statusCurrent_scriptEditor
+    # 修正2 ######################################################## start
+    # # CustomScriptEditor クラスの closedシグナル が発行されると 当メソッド が呼び出されます
+    # @Slot()
+    # def on_script_editor_closed(self):
+    #     message_warning("Script editor was hided. Not closed !!")
+    #     self.statusCurrent_scriptEditor = 'closed'
+    #     # # QTextEdit の内容を保存
+    #     # self.script_editor_content = self.script_editor.text_edit.toPlainText()
+    #     # print(self.script_editor_content)
+    #     return self.statusCurrent_scriptEditor
+    # 修正2 ######################################################## end
 
     # 1. UI-1. メニュー コマンド群 ###################################################### start
     # オーバーライド
@@ -1819,12 +2009,16 @@ class SkinWeightExpImp_View(Tpl4PySide2_Type1_View):
         # # super(SkinWeightExpImp_View, self).closeEvent(event)  # ここは無くても上手く発動するようです
 
         # # カスタムの専用 スクリプトエディタ を同時に閉じます
-        if self.statusCurrent_scriptEditor == 'closed':
+        if self.statusCurrent_scriptEditor2 == 'closed':
             pass
         else:
-            message("Script editor also completely closed and exited at the same time.")
-            # self.script_editor.close()
+            # 修正2
+            # message("Script editor also completely closed and exited at the same time.")
+            # # self.scriptEditor2.close()
+            # スクリプトエディタ は 完全に閉じず 隠れます
+            self.scriptEditor2.close()
 
+            # 修正2
             # スクリプトエディタを完全に閉じる
             # CustomScriptEditorのインスタンスはQtのイベントループが次に実行されるときに遅延削除されます。
             # これにより、CustomScriptEditorのウィジェットが閉じられ、
@@ -1833,7 +2027,7 @@ class SkinWeightExpImp_View(Tpl4PySide2_Type1_View):
             # その状態（例えばQTextEditの内容）は保持されない。
             # その状態を保持するためには、何らかの形でその状態を保存し、
             # 新しいCustomScriptEditorのインスタンスが作成されるときにその状態を復元する必要がある
-            self.script_editor.deleteLater()
+            # self.scriptEditor2.deleteLater()
     # 1. UI-1. メニュー コマンド群 ######################################################## end
 
     # 4. UI-4. OptionVar を利用したパラメータ管理 コマンド群 ############################### start

@@ -6,8 +6,8 @@ skinWeightsExpImpTool package
 :Author:
     oki yoshihiro
     okiyoshihiro.job@gmail.com
-:Version: -2.0-
-:Date: 2024/05/09
+:Version: -3.1-
+:Date: 2024/06/07
 
 .. note:: 当コード記述時の環境
 
@@ -72,6 +72,7 @@ skinWeightsExpImpTool package
             from ..lib.commonCheckShape import commonCheckShape
             from ..lib.commonCheckSkinCluster import commonCheckSkinCluster
             # 汎用ライブラリー の使用 #################################################### end
+            from ..TemplateForPySide2.CustomScriptEditor2SPIModule import custom_scriptEditor2_instance
 
 <UI 説明>
     大別して、
@@ -83,6 +84,31 @@ skinWeightsExpImpTool package
             実行出来ない仕様にしています。
 
 -リマインダ-
+    done: 2024/06/07
+        - 追加3
+            - 概要: カスタムの Script Editor2 への プロセス文字列 出力 を加味
+            - 詳細:
+                - yoSkinWeightsExpImpTool_View.py 変更記述あり
+                詳細はそれ自身のリマインダに記述...
+        version = '-3.1-'
+
+    done: 2024/06/07
+        - 変更2 と 追加2 と 新規2
+            - 概要: カスタムの の Script Editor へのログ出力 を、
+                カスタムの Script Editor2 (PySide2作成UI) で置き換え
+            - 詳細: カスタムの Script Editor2 (PySide2作成UI) で置き換える為には、
+                from ..TemplateForPySide2.CustomScriptEditor2SPIModule import custom_scriptEditor2_instance
+                モジュールを必要とします
+                また、
+                    他のモジュール でも シングルトンモジュール として再利用している関係で
+                        エラーの影響が及びます
+                そのエラーの影響を回避する目的として、
+                    以下のように、あらかじめ カスタムの Script Editor2 モジュール
+                        を定義しています
+                - yoSkinWeightsExpImpTool_View.py 変更記述あり
+                詳細はそれ自身のリマインダに記述...
+        version = '-3.0-'
+
     done: 2024/05/08~2024/05/09
         追加と変更と新規1
             - 概要: outPut 専用 script_editor ウィジェット の挙動修正
@@ -100,7 +126,7 @@ skinWeightsExpImpTool package
 """
 
 TITLE = 'yoSkinWeightsExpImpTool'  # MVCモデルを意識しファイル分割した、パッケージ記述
-VERSION = '-2.0- <py 3.7.7, ui:PySide2 5.15.2>'
+VERSION = '-3.1- <py 3.7.7, ui:PySide2 5.15.2>'
 SPACE = ' '
 
 if __name__ == '__main__':
