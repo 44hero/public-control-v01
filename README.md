@@ -282,7 +282,7 @@ YO_createClusterAndRename6_main.main()
 from YO_utilityTools.createSpIkAndRenameTool import YO_createSpIkAndRename3_main
 YO_createSpIkAndRename3_main.main()
 ```
-[createClusterAndRenameTool 動作動画](https://i.gyazo.com/333ccb7464acd594adc178e01511c909.mp4)
+[createSpIkAndRenameTool 動作動画](https://i.gyazo.com/333ccb7464acd594adc178e01511c909.mp4)
 
 <img src="https://i.gyazo.com/333ccb7464acd594adc178e01511c909.gif" width="300">
 
