@@ -6,12 +6,14 @@
 ## ●実行サンプル
 
 例えば、yoRigGenericToolGroup -5.5- <py 3.7.7, ui:PySide2 5.15.2> についてです。
-
+<!-- 
 [yoRigGenericToolGroup 動作動画](https://i.gyazo.com/f4388b4c8347cf0e996e3043e3963875.mp4)
-
 <img src="https://i.gyazo.com/f4388b4c8347cf0e996e3043e3963875.gif">
-
-<!-- <img src="https://i.gyazo.com/f4388b4c8347cf0e996e3043e3963875.gif" width="700"> -->
+ -->
+<!-- 
+<img src="https://i.gyazo.com/f4388b4c8347cf0e996e3043e3963875.gif" width="700">
+ -->
+[![Image from Gyazo](https://i.gyazo.com/f4388b4c8347cf0e996e3043e3963875.gif)](https://gyazo.com/f4388b4c8347cf0e996e3043e3963875)
 
 <details>
   <summary>例えば、yoRigGenericToolGroup -5.5- <py 3.7.7, ui:PySide2 5.15.2> についてです。</summary>
@@ -250,91 +252,115 @@ C:.
 	
 ## ●他 主な個別ツール 紹介 (一部)
 	
-### ・renameTool	
+### ●renameTool
 ```python
 from YO_utilityTools.renameTool import YO_renameTool5_main
 YO_renameTool5_main.main()
 ```
-[![Image from Gyazo](https://i.gyazo.com/d998a35999407e9b84c2277db0b3aed2.gif)](https://gyazo.com/d998a35999407e9b84c2277db0b3aed2)
+<!-- 
+[renameTool 動作動画](https://i.gyazo.com/44711214ea10767b77da427c05a3e1b8.mp4)
+<img src="https://i.gyazo.com/44711214ea10767b77da427c05a3e1b8.gif" width="300">
+ -->
+[![Image from Gyazo](https://i.gyazo.com/44711214ea10767b77da427c05a3e1b8.gif)](https://gyazo.com/44711214ea10767b77da427c05a3e1b8)
 	
-### ・createSpaceNode
-```python=
+### ●createSpaceNode
+```python
 from YO_utilityTools.createSpaceNode import YO_createSpaceNode3_main
 YO_createSpaceNode3_main.main()
 ```
+<!-- 
 [createSpaceNode 動作動画](https://i.gyazo.com/d998a35999407e9b84c2277db0b3aed2.mp4)
-
 <img src="https://i.gyazo.com/d998a35999407e9b84c2277db0b3aed2.gif" width="300">
+ -->
+[![Image from Gyazo](https://i.gyazo.com/d998a35999407e9b84c2277db0b3aed2.gif)](https://gyazo.com/d998a35999407e9b84c2277db0b3aed2)
 
-### ・createClusterAndRenameTool
-```python=
+### ●createClusterAndRenameTool
+```python
 from YO_utilityTools.createClusterAndRenameTool import YO_createClusterAndRename6_main
 YO_createClusterAndRename6_main.main()
 ```
+<!-- 
 [createClusterAndRenameTool 動作動画](https://i.gyazo.com/3ac7d147787720c4f9bfdf8ad899d3db.mp4)
+<img src="https://i.gyazo.com/3ac7d147787720c4f9bfdf8ad899d3db.gif" width="300
+ -->
+[![Image from Gyazo](https://i.gyazo.com/3ac7d147787720c4f9bfdf8ad899d3db.gif)](https://gyazo.com/3ac7d147787720c4f9bfdf8ad899d3db)
 
-<img src="https://i.gyazo.com/3ac7d147787720c4f9bfdf8ad899d3db.gif" width="300">
-
-### ・createSpIkAndRenameTool
-```python=
+### ●createSpIkAndRenameTool
+```python
 from YO_utilityTools.createSpIkAndRenameTool import YO_createSpIkAndRename3_main
 YO_createSpIkAndRename3_main.main()
 ```
+<!-- 
 [createSpIkAndRenameTool 動作動画](https://i.gyazo.com/333ccb7464acd594adc178e01511c909.mp4)
-
 <img src="https://i.gyazo.com/333ccb7464acd594adc178e01511c909.gif" width="300">
+ -->
+[![Image from Gyazo](https://i.gyazo.com/333ccb7464acd594adc178e01511c909.gif)](https://gyazo.com/333ccb7464acd594adc178e01511c909)
 
-### ・pointConstraintByMatrix
-```python=
+### ●pointConstraintByMatrix
+```python
 from YO_utilityTools.pointConstraintByMatrix import YO_pointConstraintByMatrix1_main
 YO_pointConstraintByMatrix1_main.main()
 ```
+<!-- 
 [pointConstraintByMatrix 動作動画](https://i.gyazo.com/ee6c769db445800e3dda60e22bb50675.mp4)
-
 <img src="https://i.gyazo.com/ee6c769db445800e3dda60e22bb50675.gif" width="300">
+ -->
+[![Image from Gyazo](https://i.gyazo.com/ee6c769db445800e3dda60e22bb50675.gif)](https://gyazo.com/ee6c769db445800e3dda60e22bb50675)
 
-### ・orientConstraintByMatrix
-```python=
+### ●orientConstraintByMatrix
+```python
 from YO_utilityTools.orientConstraintByMatrix import YO_orientConstraintByMatrix1_main
 YO_orientConstraintByMatrix1_main.main()
 ```
+<!-- 
 [pointConstraintByMatrix 動作動画](https://i.gyazo.com/0a83fd4ec712fcfd98ebdbbc102f9445.mp4)
-
 <img src="https://i.gyazo.com/0a83fd4ec712fcfd98ebdbbc102f9445.gif" width="300">
+ -->
+[![Image from Gyazo](https://i.gyazo.com/0a83fd4ec712fcfd98ebdbbc102f9445.gif)](https://gyazo.com/0a83fd4ec712fcfd98ebdbbc102f9445)
 
-### ・scaleConstraintByMatrix
-```python=
+### ●scaleConstraintByMatrix
+```python
 from YO_utilityTools.scaleConstraintByMatrix import YO_scaleConstraintByMatrix1_main
 YO_scaleConstraintByMatrix1_main.main()
 ```
+<!-- 
 [scaleConstraintByMatrix 動作動画](https://i.gyazo.com/5fcf0d637c5e162eb60373ab54a33344.mp4)
-
 <img src="https://i.gyazo.com/5fcf0d637c5e162eb60373ab54a33344.gif" width="300">
+ -->
+[![Image from Gyazo](https://i.gyazo.com/5fcf0d637c5e162eb60373ab54a33344.gif)](https://gyazo.com/5fcf0d637c5e162eb60373ab54a33344)
 
-### ・shearConstraintByMatrix
-```python=
+### ●shearConstraintByMatrix
+```python
 from YO_utilityTools.shearConstraintByMatrix import YO_shearConstraintByMatrix1_main
 YO_shearConstraintByMatrix1_main.main()
 ```
+<!--
 [shearConstraintByMatrix 動作動画](https://i.gyazo.com/48d77acfceb3c0589feae0198cb9fe4c.mp4)
-
 <img src="https://i.gyazo.com/48d77acfceb3c0589feae0198cb9fe4c.gif" width="300">
+ -->
+[![Image from Gyazo](https://i.gyazo.com/48d77acfceb3c0589feae0198cb9fe4c.gif)](https://gyazo.com/48d77acfceb3c0589feae0198cb9fe4c)
 
-### ・skinWeightsExpImpTool
-```python=
+### ●skinWeightsExpImpTool
+```python
 from YO_utilityTools.skinWeightsExpImpTool import yoSkinWeightsExpImpTool_main
 yoSkinWeightsExpImpTool_main.main()
 ```
+<!-- 
 [skinWeightsExpImpTool export動作動画01](https://i.gyazo.com/d181ab4fa69c292535f3397f0acaab89.mp4)
-
 <img src="https://i.gyazo.com/d181ab4fa69c292535f3397f0acaab89.gif" width="300">
+ -->
+[![Image from Gyazo](https://i.gyazo.com/d181ab4fa69c292535f3397f0acaab89.gif)](https://gyazo.com/d181ab4fa69c292535f3397f0acaab89)
 <br>	
 
+<!-- 
 [skinWeightsExpImpTool export動作動画02](https://i.gyazo.com/ed1165cfde788df7c66fb045201cf83a.mp4)
-
 <img src="https://i.gyazo.com/ed1165cfde788df7c66fb045201cf83a.gif" width="300">
-<br>	
+ -->
+[![Image from Gyazo](https://i.gyazo.com/ed1165cfde788df7c66fb045201cf83a.gif)](https://gyazo.com/ed1165cfde788df7c66fb045201cf83a)
+<br>
 
+<!-- 
 [skinWeightsExpImpTool import動作動画](https://i.gyazo.com/0bdaa15541a45a63b58b4e6c6cad3417.mp4)
-
 <img src="https://i.gyazo.com/0bdaa15541a45a63b58b4e6c6cad3417.gif" width="300">
+ -->
+[![Image from Gyazo](https://i.gyazo.com/0bdaa15541a45a63b58b4e6c6cad3417.gif)](https://gyazo.com/0bdaa15541a45a63b58b4e6c6cad3417)
