@@ -251,13 +251,11 @@ C:.
 ## ●他 主な個別ツール 紹介 (一部)
 	
 ### ・renameTool	
-```python=
+```python
 from YO_utilityTools.renameTool import YO_renameTool5_main
 YO_renameTool5_main.main()
 ```
-[renameTool 動作動画](https://i.gyazo.com/44711214ea10767b77da427c05a3e1b8.mp4)
-
-<img src="https://i.gyazo.com/44711214ea10767b77da427c05a3e1b8.gif" width="300">
+[![Image from Gyazo](https://i.gyazo.com/d998a35999407e9b84c2277db0b3aed2.gif)](https://gyazo.com/d998a35999407e9b84c2277db0b3aed2)
 	
 ### ・createSpaceNode
 ```python=
